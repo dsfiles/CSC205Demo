@@ -3,18 +3,32 @@ public class Program
 {
     static void Main()
     {
-
-        Sum(10);
+        Console.WriteLine(Sum(10));
+        Console.WriteLine(Sum2(10));
+        
     }
 
-    static void Sum(int n)
+    static int Sum(int n)
     {
         int result = 0, i = 1;
         while (i <= n)
         {
-            result += i; // result = result + i;
-            i++; // i = i + 1;
+            result = result + i;
+            i = i + 1;
         }
-        Console.WriteLine(result);
+        return result;
     }
+
+    static int Sum2(int n)
+    {
+        int result = 0, i = 1;
+        do
+        {
+            result = result + i;
+            i = i + 1;
+        }
+        while (i <= n);
+        return result;
+    }
+
 }
