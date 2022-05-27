@@ -1,16 +1,17 @@
 ﻿using System;
-namespace CSC205Week02
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            int hour = 0, minute = 14, second = 0;
-            int secondSinceMidnight;
-            secondSinceMidnight = hour * 60 * 60 + minute * 60 + second;
-            Console.WriteLine("Number of seconds since midnight: " + secondSinceMidnight);
-            Console.WriteLine("Number of seconds remaining in the day: " + (24 * 60 * 60 - secondSinceMidnight));
-            Console.WriteLine("Fraction of the day that has passed: " + (double)secondSinceMidnight / (24 * 60 * 60) * 100);
-        }
+        double x1, volume, c2;
+        double a = 1.0, b = 2.83, c = 1.2;
+        double r = 1.0;
+        double theta = 0.523599;
+        x1 = (-b + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
+        volume = (4.0 / 3.0) * Math.PI * Math.Pow(r, 3.0);
+        c2 = Math.Pow(Math.Sin(theta), 2) + Math.Pow(Math.Cos(theta), 2);
+        Console.WriteLine(x1);
+        Console.WriteLine(volume);
+        Console.WriteLine(c2);
     }
 }
