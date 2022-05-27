@@ -1,20 +1,26 @@
-﻿using System;
+﻿// Collatz Conjecture textbook page 63 
+using System;
 public class Program
 {
     static void Main()
     {
-        CountDown(5);
+        Console.WriteLine("Enter an integer (>1) to check Collatz Conjecture:");
+        int n = int.Parse(Console.ReadLine());
+        Sequence(n);
     }
-    static void CountDown(int n)
+    public static void Sequence(int n)
     {
-        if (n == 0)
-        {
-            Console.WriteLine("Blastoff!");
-        }
-        else
+        while (n != 1)
         {
             Console.WriteLine(n);
-            CountDown(n - 1);
+            if (n % 2 == 0)
+            { // n is even
+                n = n / 2;
+            }
+            else
+            { // n is odd
+                n = n * 3 + 1;
+            }
         }
     }
 }
