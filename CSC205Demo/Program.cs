@@ -1,17 +1,38 @@
 ﻿using System;
-class Program
+namespace CSC205Quiz02
 {
-    static void Main(string[] args)
+    class Program
     {
-        double x1, volume, c2;
-        double a = 1.0, b = 2.83, c = 1.22;
-        double r = 1.0;
-        double theta = 0.523599;
-        x1 = (-b + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
-        volume = (4.0 / 3.0) * Math.PI * Math.Pow(r, 3.0);
-        c2 = Math.Pow(Math.Sin(theta), 2) + Math.Pow(Math.Cos(theta), 2);
-        Console.WriteLine(x1);
-        Console.WriteLine(volume);
-        Console.WriteLine(c2);
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Median(1, 2, 3));
+            Console.WriteLine(Median(1, 3, 2));
+            Console.WriteLine(Median(2, 1, 3));
+            Console.WriteLine(Median(2, 3, 1));
+            Console.WriteLine(Median(3, 2, 1));
+            Console.WriteLine(Median(3, 1, 2));
+            Console.WriteLine(Median(2, 2, 1));
+            Console.WriteLine(Median(2, 2, 3));
+            Console.WriteLine(Median(2, 3, 2));
+            Console.WriteLine(Median(1, 2, 2));
+            Console.WriteLine(Median(3, 2, 2));
+        }
+
+        static double Median(double x, double y, double z)
+        {
+            // Checking for y
+            if ((x < y && y < z) || (z < y && y < x))
+            {
+                return y;
+            }
+            // Checking for z
+            else if ((x < z && z < y) || (y < z && z < x))
+            {
+                return z;
+            }
+            // Default to x since we know at this point x is middle
+            else return x;
+        }
+
     }
 }
