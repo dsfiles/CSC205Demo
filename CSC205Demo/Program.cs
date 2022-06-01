@@ -1,23 +1,16 @@
-﻿public class Program
+﻿using System;
+public class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
-        int i = 1;
-        while (i <= 6)
+        int factorial = ?;
+        int i = ?;
+        while (i <= 5)
         {
-            WriteMultiples(i);
-            i++;
+            ???;
         }
-    }
-    static void WriteMultiples(int n)
-    {
-        int j = 1;
-        while (j <= 6)
-        {
-            System.Console.Write(n * j + "\t");
-            j++;
-        }
-        System.Console.WriteLine();
+        Console.WriteLine(factorial);
     }
 
-}
+
+   
