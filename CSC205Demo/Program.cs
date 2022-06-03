@@ -3,9 +3,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Greetings! What's your name?");
-        string name = Console.ReadLine();
-        Console.WriteLine("Nice to meet you, " + name);
-        Console.ReadKey();
+        int num;
+        string myStr = "25";
+        num = int.Parse(myStr);
+        Console.WriteLine("int.Parse method result: " + num);
+        num = Convert.ToInt32(myStr);
+        Console.WriteLine("Convert.ToInt32 method result: " + num);
     }
 }
