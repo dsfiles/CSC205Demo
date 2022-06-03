@@ -1,16 +1,22 @@
 ﻿using System;
 public class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        int factorial = ?; ;
-        int i = ?;
-        while (i <= 5)
+        string name1 = "~AdaTu";
+        string name2 = "Ada Lovelace";
+        int flag = name1.CompareTo(name2);
+        if (flag == 0)
         {
-            ???;
+            Console.WriteLine("The names are the same.");
         }
-        Console.WriteLine(factorial);
+        else if (flag < 0)
+        {
+            Console.WriteLine("name1 comes before name2.");
+        }
+        else if (flag > 0)
+        {
+            Console.WriteLine("name2 comes before name1");
+        }
     }
-
-
-   
+}
