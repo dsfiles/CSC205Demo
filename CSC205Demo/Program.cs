@@ -3,7 +3,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int factorial = ?;
+        int factorial = ?; ;
         int i = ?;
         while (i <= 5)
         {
