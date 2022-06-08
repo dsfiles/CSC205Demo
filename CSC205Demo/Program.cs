@@ -19,22 +19,5 @@ namespace ThinkSharp
             }
         }
 
-        private static void processFile(string filename)
-        {
-            string line;
-            int count = 1;
-            TextReader reader = new StreamReader(filename);
-            while (true)
-            {
-                line = reader.ReadLine();
-                if (line == null)
-                {
-                    break;
-                }
-                Console.WriteLine(count + ": " + line);
-                count++;
-            }
-            reader.Close();
-        }
     }
 }
