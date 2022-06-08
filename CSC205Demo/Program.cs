@@ -1,24 +1,18 @@
-﻿// Write down the output then run the program to check your answer
+﻿/*
+ * The following code adds up 1, 2, 3 ... 100.
+ * Fill in the missing pieces
+ */
+
 using System;
-class CSC205Week04ExerciseOne
+class CSC205Week04ExerciseTwo
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Method(3, 5);
-        Method(3, 5.0);
-        Method(3.0, 5);
-        Method(3.0, 5.0);
-    }
-    public static void Method(int a, int b)
-    {
-        Console.WriteLine($"a: {a.GetType()}, b: {b.GetType()}");
-    }
-    public static void Method(double a, int b)
-    {
-        Console.WriteLine($"a: {a.GetType()}, b: {b.GetType()}");
-    }
-    public static void Method(double a, double b)
-    {
-        Console.WriteLine($"a: {a.GetType()}, b: {b.GetType()}");
+        __(1)__;
+        for (int i = 0; __(2)__; i++)
+        {
+            sum += i;
+        }
+        Console.WriteLine(sum);
     }
 }
