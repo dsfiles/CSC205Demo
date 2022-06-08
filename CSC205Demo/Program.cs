@@ -1,23 +1,35 @@
 ﻿using System;
-class CSC205Week04ExerciseThree {
-    public static void Main(){
-        int i = 0;
-        double e = 0;
-        while (i < 10)
+namespace CSC205
+{
+    public class Program
+    {
+        public static void Main(string[] args)
         {
-            e += 1.0 / F(i);
-            i++;
+            var t = new Time();
+            //t.hour = 11;
+            //t.minute = 45;
+            //t.second = 22;
+            Console.WriteLine($"{t.hour}:{t.minute}:{t.second}");
+            var t2 = new Time(11, 55, 23.0);
+            Console.WriteLine($"{t2.hour}:{t2.minute}:{t2.second}");
         }
-        Console.WriteLine(Math.E-e);
     }
-    public static long F(int n){
-        if (n == 0)
-            return 1;
-        long product = 1;
-        for (int i = 1; i <= n; i++)
+    public class Time
+    {
+        public int hour, minute;
+        public double second;
+
+        public Time()
         {
-            product *= i;
+            this.hour = 23;
+            this.minute = 0;
+            this.second = 0.0;
         }
-        return product;
+        public Time(int h, int m, double s)
+        {
+            this.hour = h;
+            this.minute = m;
+            this.second = s;
+        }
     }
 }
