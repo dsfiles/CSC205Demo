@@ -1,18 +1,29 @@
-﻿/*
- * The following code adds up 1, 2, 3 ... 100.
- * Fill in the missing pieces
- */
+﻿// Describe the program
 
 using System;
-class CSC205Week04ExerciseTwo
+class CSC205Week04ExerciseThree
 {
     public static void Main()
     {
-        __(1)__;
-        for (int i = 0; __(2)__; i++)
+        int i = 0;
+        double e = 0;
+        while (i < 10)
         {
-            sum += i;
+            e += 1.0 / F(i);
+            i++;
         }
-        Console.WriteLine(sum);
+        Console.WriteLine(Math.E - e);
+    }
+
+    public static long F(int n)
+    {
+        if (n == 0)
+            return 1;
+        long product = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            product *= i;
+        }
+        return product;
     }
 }
