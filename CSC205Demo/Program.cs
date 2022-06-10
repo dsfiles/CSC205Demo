@@ -13,7 +13,8 @@ namespace CSC205Demo
 
             Time.WriteTime(t2);
             Time.WriteTime2(t2);
-            //}
+
+            t2.WriteTime3();
         }
     }
     

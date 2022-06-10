@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSC205Demo
 {
-   class Time
+    class Time
     {
         public int hour, minute;
         public double second;
@@ -37,6 +37,9 @@ namespace CSC205Demo
             t.hour, t.minute, (int)t.second));
         }
 
-
+        public void WriteTime3()
+        {  // a version uses this
+            Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
+        }
     }
 }
