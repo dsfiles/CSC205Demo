@@ -28,8 +28,15 @@ namespace CSC205Demo
             Console.Write(":");
             Console.Write(t.minute);
             Console.Write(":");
-            Console.Write(t.second);
+            Console.WriteLine(t.second);
         }
+
+        public static void WriteTime2(Time t)
+        {   // a version that uses String.Format
+            Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:D2}",
+            t.hour, t.minute, (int)t.second));
+        }
+
 
     }
 }
