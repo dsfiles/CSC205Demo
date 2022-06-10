@@ -21,7 +21,7 @@ namespace CSC205
 
         public Time()
         {
-            this.hour = 23;
+            this.hour = 22;
             this.minute = 0;
             this.second = 0.0;
         }
