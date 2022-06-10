@@ -7,6 +7,10 @@ namespace CSC205Demo
         public string title;
         public string isbn;
         public double price;
+        public Book()
+        {
+            title = ""; isbn = "";price = 0.0;
+        }
     }
 
     public class Program
