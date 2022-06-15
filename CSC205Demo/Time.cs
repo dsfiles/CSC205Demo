@@ -21,7 +21,6 @@ namespace CSC205Demo
             this.minute = m;
             this.second = s;
         }
-
         public static void WriteTime1(Time t) {
             Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:D2}",
             t.hour, t.minute, (int)t.second));
@@ -34,7 +33,6 @@ namespace CSC205Demo
             Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:D2}",
              t.hour, t.minute, (int)t.second));
         }
-
         public static bool IsAfter(Time time1, Time time2)
         {
             if (time1.hour > time2.hour) return true;
@@ -44,7 +42,6 @@ namespace CSC205Demo
             if (time1.second > time2.second) return true;
             return false;
         }
-
         public static Time AddTime(Time t1, Time t2)
         {
             Time sum = new Time();
@@ -53,7 +50,6 @@ namespace CSC205Demo
             sum.second = t1.second + t2.second;
             return sum;
         }
-
         public static Time AddTime2(Time t1, Time t2)
         {
             Time sum = new Time();
@@ -71,6 +67,35 @@ namespace CSC205Demo
                 sum.hour += 1;
             }
             return sum;
+        }
+        public static void Increment(Time time, double secs)
+        {
+            time.second += secs;
+            if (time.second >= 60.0)
+            {
+                time.second -= 60.0;
+                time.minute += 1;
+            }
+            if (time.minute >= 60)
+            {
+                time.minute -= 60;
+                time.hour += 1;
+            }
+        }
+
+        public static void Increment2(Time time, double secs)
+        {
+            time.second += secs;
+            while (time.second >= 60.0)
+            {
+                time.second -= 60.0;
+                time.minute += 1;
+            }
+            while (time.minute >= 60)
+            {
+                time.minute -= 60;
+                time.hour += 1;
+            }
         }
 
     }
