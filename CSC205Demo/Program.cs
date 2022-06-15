@@ -10,8 +10,8 @@ namespace CSC205Demo
             count[1] = count[0] * 2;
             count[2]++;
             count[3] -= 60;
-            int[] arr = new int[4];
-            //arr = count;
+            //int[] arr = new int[4];
+            int[] arr = count;
             for (int i = 0; i < count.Length; i++)
             {
                 arr[i] = count[i];
