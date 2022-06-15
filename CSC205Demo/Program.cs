@@ -4,20 +4,20 @@ namespace CSC205Demo
     using System;
     public class Program {
         public static void Main() {
-            Time t1 = new Time(11, 58, 31);
-            Time t2 = new Time(11, 58, 31);
-            Console.WriteLine(  Time.IsAfter(t1, t2) );
+            Time t1 = new Time(11, 28, 11);
+            Time t2 = new Time(11, 28, 11);
+            //Console.WriteLine(  Time.IsAfter(t1, t2) );
 
-            //public static bool IsAfter(Time time1, Time time2)
+            Time.AddTime(t1, t2).WriteTime2();
+
+            //public static Time AddTime(Time t1, Time t2)
             //{
-            //    if (time1.hour > time2.hour) return true;
-            //    if (time1.hour < time2.hour) return false;
-            //    if (time1.minute > time2.minute) return true;
-            //    if (time1.minute < time2.minute) return false;
-            //    if (time1.second > time2.second) return true;
-            //    return false;
+            //    Time sum = new Time();
+            //    sum.hour = t1.hour + t2.hour;
+            //    sum.minute = t1.minute + t2.minute;
+            //    sum.second = t1.second + t2.second;
+            //    return sum;
             //}
-
         }
     }
 }
