@@ -3,18 +3,18 @@ namespace CSC205Demo
 {
     using System;
     public class Program {
-        public static void Main() {
-            Time t5 = new Time(3669000);
-            t5.WriteTime2();
-            //public Time(double secs)
-            //{ // a new constructor that uses one argument only
-            //    this.hour = (int)(secs / 3600.0);
-            //    secs -= this.hour * 3600.0;
-            //    this.minute = (int)(secs / 60.0);
-            //    secs -= this.minute * 60;
-            //    this.second = secs;
-            //}
-            //}
+        public static void Main() 
+        {
+            int[] count = new int[4];
+            count[0] = 7;
+            count[1] = count[0] * 2;
+            count[2]++;
+            count[3] -= 60;
+            foreach (var item in count)
+            {
+                Console.WriteLine(item);
+            }
+
         }
     }
 }
