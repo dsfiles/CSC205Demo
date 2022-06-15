@@ -18,7 +18,7 @@ namespace CSC205Demo
             }
             foreach (var item in count) {
                 Console.WriteLine(item);
-            } 
+            }  
             Console.WriteLine();
             arr[0] = 1;
             foreach (var item in arr){
