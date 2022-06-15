@@ -14,18 +14,22 @@ namespace CSC205Demo
             int[] arr = new int[4];
             arr = count;
 
+            foreach (var item in count) {
+                Console.WriteLine(item);
+            } 
+
+            Console.WriteLine();
+            
+            arr[0] = 1;
+
+            foreach (var item in arr){
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
             foreach (var item in count)
             {
                 Console.WriteLine(item);
-            } 
-            Console.WriteLine();
-            
-
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
             }
-            
 
         }
     }
