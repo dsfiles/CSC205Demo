@@ -21,6 +21,16 @@ namespace CSC205Demo
             this.minute = m;
             this.second = s;
         }
+        public Time(double secs)
+        { // a new constructor that uses one argument only
+            this.hour = (int)(secs / 3600.0);
+            secs -= this.hour * 3600.0;
+            this.minute = (int)(secs / 60.0);
+            secs -= this.minute * 60;
+            this.second = secs;
+        }
+
+
         public static void WriteTime1(Time t) {
             Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:D2}",
             t.hour, t.minute, (int)t.second));

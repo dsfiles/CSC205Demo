@@ -4,15 +4,17 @@ namespace CSC205Demo
     using System;
     public class Program {
         public static void Main() {
-            Time t3 = new Time(11, 58, 159);
-            
-            Time t4 = new Time(11, 28, 9);
-            //Console.WriteLine(  Time.IsAfter(t1, t2) );
-            t4.WriteTime2();
-            Time.Increment(t4, 29);
-            t4.WriteTime2();
-
-            //public static void Increment(Time time, double secs)
+            Time t5 = new Time(3669000);
+            t5.WriteTime2();
+            //public Time(double secs)
+            //{ // a new constructor that uses one argument only
+            //    this.hour = (int)(secs / 3600.0);
+            //    secs -= this.hour * 3600.0;
+            //    this.minute = (int)(secs / 60.0);
+            //    secs -= this.minute * 60;
+            //    this.second = secs;
+            //}
+            //}
         }
     }
 }
