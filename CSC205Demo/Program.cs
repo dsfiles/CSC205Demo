@@ -8,7 +8,7 @@ namespace CSC205Demo
             var t2 = new Time(9, 35, 28);
             // invoke WriteTime1 to display t2
             // invoke WriteTime2 to display t2
-            // two ways to invoke WriteTime3 to display t3
+            // two ways to invoke WriteTime3 to display t2
             // 1)
             // 2)
         }
