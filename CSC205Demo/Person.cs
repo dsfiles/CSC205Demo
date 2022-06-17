@@ -1,7 +1,7 @@
 ﻿abstract class Person
 { // Parent class
-    public string name;
-    public int age;
+    private string name;
+    private int age;
     public Person(string name, int age)
     {
         this.name = name;
@@ -12,10 +12,10 @@
 }
 class Teacher : Person
 { // Child class
-    public string subject;
+    private string subject;
     public Teacher(string name, int age, string subject) : base(name, age)
     { this.subject = subject; }
-    public void DisplayTeacher()
+    public void DisplayInfo()
     {
         base.DisplayNameAge();
         System.Console.WriteLine($"Teaches {subject}\n");
@@ -23,10 +23,10 @@ class Teacher : Person
 }
 class Student : Person
 { // Child class
-    public double gpa;
+    private double gpa;
     public Student(string name, int age, double gpa) : base(name, age)
     { this.gpa = gpa; }
-    public void DisplayStudent()
+    public void DisplayInfo()
     {
         base.DisplayNameAge();
         System.Console.WriteLine($"GPA: {this.gpa}");

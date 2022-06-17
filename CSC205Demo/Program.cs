@@ -10,10 +10,11 @@
 
 
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-        teacher.DisplayTeacher();
+        teacher.DisplayInfo();
         Student student = new Student("Sara", 19, 3.5);
-        student.DisplayStudent();
+        student.DisplayInfo();
 
+        System.Console.WriteLine(student.name);
 
     }
 }
