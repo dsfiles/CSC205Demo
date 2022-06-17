@@ -4,13 +4,14 @@ namespace CSC205Demo
     public class Program {
         public static void Main()
         {
-            Random rnd = new Random();
-            
-            for (int i = 0; i < 20; i++)
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine(rnd.Next(7));
+                double x = random.NextDouble();
+                Console.WriteLine(x);
             }
-            
+
+
         }
     }
 }
