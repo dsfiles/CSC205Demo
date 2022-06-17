@@ -1,38 +1,50 @@
 ﻿using System;
-namespace ThinkSharp
+
+public class Vehicle // base class
 {
-    public class Program
+    public string model;
+    public int year;
+    public Vehicle(string model, int year)
     {
-        public static void Main(string[] args)
-        {
-            int[] scores = RandomArray(30);
-            WriteArray(scores);
-            int[] counts = new int[100];
-            for (int i = 0; i < scores.Length; i++)
-            {
-                int index = scores[i];
-                counts[index]++;
-            }
-            WriteArray(counts);
-        }
-
-        public static int[] RandomArray(int size)
-        {
-            Random random = new Random();
-            int[] array = new int[size];
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = random.Next(0, 100);
-            }
-            return array;
-        }
-
-        public static void WriteArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
-        }
+        this.model = model;
+        this.year = year;
     }
 }
+
+public class Car : Vehicle
+{
+    private int seating_capacity;
+    public Car(string model, int year, int capacity) : base(model, year)
+    {
+        seating_capacity = capacity;
+    }
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"model: {model}, year: {year}, seating capacity: {seating_capacity}");
+    }
+}
+
+public class Truck : Vehicle
+{
+    private int load_capacity;
+    public Truck(string model, int year, int capacity) : base(model, year)
+    {
+        load_capacity = capacity;
+    }
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"model: {model}, year: {model}, load capacity: {load_capacity} tons");
+    }
+}
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        var car = new Car("Honda Accord", 2019, 5);
+        var truck = new Truck("kenworth W990", 2020, 50);
+        car.DisplayInfo();
+        truck.DisplayInfo();
+    }
+}
+
