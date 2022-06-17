@@ -2,10 +2,18 @@
 {
     static void Main(string[] args)
     {
-        //Person person = new Person("Allan", 21);
+        ////Person person = new Person("Allan", 21);
+        //Teacher teacher = new Teacher("Tom", 55, "Computer Science");
+        //teacher.DisplayNameAge();
+        //Student student = new Student("Sara", 19, 3.5);
+        //student.DisplayNameAge();
+
+
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-        teacher.DisplayNameAge();
+        teacher.DisplayTeacher();
         Student student = new Student("Sara", 19, 3.5);
-        student.DisplayNameAge();
+        student.DisplayStudent();
+
+
     }
 }
