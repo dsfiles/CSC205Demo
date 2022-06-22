@@ -24,8 +24,12 @@ class Teacher : Person
 class Student : Person
 { // Child class
     private double gpa;
+    public double Gpa { 
+        get { return gpa; } 
+        set { gpa = value; } 
+    } // Just a Property example
     public Student(string name, int age, double gpa) : base(name, age)
-    { this.gpa = gpa; }
+    { this.gpa = 3.5; }
     public void DisplayInfo()
     {
         base.DisplayNameAge();

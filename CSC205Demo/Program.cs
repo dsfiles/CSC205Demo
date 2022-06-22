@@ -7,7 +7,7 @@
         teacher.DisplayInfo();
         Student student = new Student("Sara", 19, 3.5);
         student.DisplayInfo();
-
+        
 
     }
 }
