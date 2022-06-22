@@ -1,35 +1,19 @@
 ﻿using System;
-class Point
+public struct Book
 {
-    public int x, y;
-    public Point(int x, int y)
-    {
-        this.x = x;
-        this.y = y;
-    }
-    // remove (by commenting out) the following Equals method to see if the result is different
-    public override bool Equals(object obj)
-    {   // If this and obj do not refer to the same type, then they are not equal.
-        if (obj.GetType() != this.GetType()) return false;
-        // Return true if x and y fields match.
-        var other = (Point)obj;
-        return (this.x == other.x) && (this.y == other.y);
-    }
-    public override String ToString()
-    {
-        return $"({x}, {y})";
-    }
+    public string title, isbn;
+    public double price;
 }
-
-public sealed class App
+public class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
-        var p1 = new Point(1, 2);
-        var p2 = p1;
-        var p3 = new Point(1, 2);
-        Console.WriteLine(p1.Equals(p2));
-        Console.WriteLine(p1.Equals(p3));
-        Console.WriteLine($"p1's value is: {p1.ToString()}");
+        Book book1;
+        //Book book1 = new Book();
+        //Console.WriteLine(book1.price);
+        book1.title = "C# Programming";
+        book1.isbn = "180056810X";
+        book1.price = 42.74;
+        Console.WriteLine($"title: {book1.title}, ISBN: {book1.isbn}, Price: {book1.price}");
     }
 }
