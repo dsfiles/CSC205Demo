@@ -2,7 +2,9 @@
 {
     private string name; // field
     public Person(string name)
-    { this.name = name; }
+    { 
+        this.name = name; 
+    }
     public string Name   // property
     {
         get { return name; } // get method
