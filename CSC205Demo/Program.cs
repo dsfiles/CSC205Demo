@@ -1,5 +1,5 @@
 ﻿using System;
-public struct Book
+public class Book
 {
     public string title, isbn;
     public double price;
@@ -8,9 +8,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Book book1;
-        //Book book1 = new Book();
-        //Console.WriteLine(book1.price);
+        Book book1 = new Book();
+        Console.WriteLine(book1.price);
         book1.title = "C# Programming";
         book1.isbn = "180056810X";
         book1.price = 42.74;
