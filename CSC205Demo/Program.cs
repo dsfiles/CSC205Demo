@@ -2,11 +2,7 @@
 {
     static void Main(string[] args)
     {
-        ////Person person = new Person("Allan", 21);
-        //Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-        //teacher.DisplayNameAge();
-        //Student student = new Student("Sara", 19, 3.5);
-        //student.DisplayNameAge();
+        
 
 
         Teacher teacher = new Teacher("Tom", 55, "Computer Science");
@@ -14,7 +10,6 @@
         Student student = new Student("Sara", 19, 3.5);
         student.DisplayInfo();
 
-        System.Console.WriteLine(student.name);
 
     }
 }
