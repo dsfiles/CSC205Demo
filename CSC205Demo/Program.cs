@@ -1,18 +1,11 @@
-﻿public class Program
+﻿using System;
+public class Program
 {
     static void Main(string[] args)
     {
-        
-        Teacher teacher = new Teacher("Tom", 55, "Computer Science");
-        teacher.DisplayInfo();
-        Student student = new Student("Sara", 19, 3.5);
-        student.DisplayInfo();
-        System.Console.WriteLine();
-        System.Console.WriteLine(student.Gpa);
-        student.Gpa = 3.9;
-        System.Console.WriteLine(student.Gpa);
-
-
-
+        Person p = new Person("Abby");
+        Console.WriteLine(p.Name);
+        p.Name = "Tom";
+        Console.WriteLine(p.Name);
     }
 }
