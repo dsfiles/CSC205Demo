@@ -1,24 +1,22 @@
 ﻿using System;
-public enum Color { Red, Green, Blue }
-public class Example
+using System.Collections.Generic;
+namespace CSC205Week08
 {
-    public static void Main()
+    public class Program
     {
-        Color c = (Color)(new Random()).Next(0, 3);
-        switch (c)
+        public static void Main(string[] args)
         {
-            case Color.Red:
-                Console.WriteLine("The color is red");
-                break;
-            case Color.Green:
-                Console.WriteLine("The color is green");
-                break;
-            case Color.Blue:
-                Console.WriteLine("The color is blue");
-                break;
-            default:
-                Console.WriteLine("The color is unknown.");
-                break;
+            var salmons = new List<string>();
+            salmons.Add("chinook");
+            salmons.Add("coho");
+            salmons.Add("pink");
+            salmons.Add("sockeye");
+            salmons.Remove("coho");
+            // Iterate through the list.
+            foreach (var salmon in salmons)
+            {
+                Console.Write(salmon + " ");
+            }
         }
     }
 }
