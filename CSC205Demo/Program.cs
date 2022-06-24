@@ -1,20 +1,24 @@
 ﻿using System;
-public enum Season
-{ //names of enum members
-    Spring,
-    Summer,
-    Autumn,
-    Winter
-}
-public class EnumConversionExample
+public enum Color { Red, Green, Blue }
+public class Example
 {
     public static void Main()
     {
-        Season a = Season.Autumn;
-        Console.WriteLine($"Integral value of {a} is {(int)a}");
-        var b = (Season)1;
-        Console.WriteLine(b);  // output: Summer
-        var c = (Season)4;
-        Console.WriteLine(c);  // output: 4
+        Color c = (Color)(new Random()).Next(0, 3);
+        switch (c)
+        {
+            case Color.Red:
+                Console.WriteLine("The color is red");
+                break;
+            case Color.Green:
+                Console.WriteLine("The color is green");
+                break;
+            case Color.Blue:
+                Console.WriteLine("The color is blue");
+                break;
+            default:
+                Console.WriteLine("The color is unknown.");
+                break;
+        }
     }
 }
