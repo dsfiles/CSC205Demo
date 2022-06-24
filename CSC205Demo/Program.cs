@@ -1,38 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//Question 1
 
-namespace quiz5
+using System;
+using System.Collections.Generic;
+class Doubloon
+
 {
-    public class quiz5
+    static bool IsDoubloon(string s)
     {
-        public static bool IsDoubloon(string word)
+
+        IDictionary<char, int> doubloon = new Dictionary<char, int>();
+        // sets result to true by default
+        bool result = true;
+        // converts string to all lowercase values so characters can be properly evaluated
+        s = s.ToLower();
+        // for loop iterates through each letter of the string
+        foreach (char c in s)
         {
-            word = word.ToLower();
-            for (int counter = 0; counter < word.Length; counter++)
+            // if the letter is already a key in the dictionary, add one to tally
+            if (doubloon.ContainsKey(c))
             {
-                int matchCount = 0;
-                char c = word[counter];
-                for (int compare = 0; compare < word.Length; compare++)
-                {
-                    if (c == word[compare])
-                    {
-                        matchCount = matchCount + 1;
-                    }
-                }
-                if (matchCount != 2)
-                {
-                    return false;
-                }
+                doubloon[c]++;
             }
-            return true;
+
+            // if the letter is not yet a key in the dictionary, add the key/value pair with the value set to one
+            else
+            {
+                doubloon.Add(c, 1);
+            }
         }
-        static void Main()
+
+
+
+        //iterates throguh dictionary, checking if all characters in string ('keys') appeared exactly twice
+
+        // if any characters appeared more or less than twice, the result is changed to false
+
+        foreach (char key in doubloon.Keys)
+
         {
-            Console.WriteLine(IsDoubloon("bilabial"));
-            Console.WriteLine(IsDoubloon("Shanghaiings"));
+
+            if (doubloon[key] != 2)
+
+            {
+
+                result = false;
+
+            }
+
         }
+
+
+
+        return result;
+
     }
+
+    static void Main(string[] args)
+
+    {
+
+        Console.WriteLine(IsDoubloon("Appeases"));
+
+        Console.WriteLine(IsDoubloon("Appeasesa"));
+
+    }
+
 }
