@@ -1,32 +1,33 @@
-﻿namespace CSC205Quiz06
+﻿using System;
+namespace CSC205Quiz06
 {
-    public class Rect
+    class Program
     {
-        public double Height { get; set; }
-        public double Length { get; set; }
-        public static double ComputeArea1(Rect rec)
+        static void Main(string[] args)
         {
-            return rec.Height * rec.Length;
-        }
-        public double ComputeArea2()
-        {
-            return Height * Length;
-        }
-    }
-    public class Program
-    {
-        public static void Main()
-        {
-            // Create a new Rect object call r using the default constructor
-            // Invoke ComputeArea1 and display the area of r 
-            // set both r's Height and Length to 3;
-            // Invoke ComputeArea2 to display the area of r
-            //Answers:
-            var r = new Rect();
-            System.Console.WriteLine(Rect.ComputeArea1(r));
-            r.Height = r.Length = 3.0;
-            System.Console.WriteLine(r.ComputeArea2());
-
+            int[] a = { 3, 2, 5, 1, 4 };
+            int tmp;
+            Console.WriteLine("The original array: ");
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.Write(a[i] + " ");
+            }
+            for (int i = 0; i < a.Length - 1; i++)
+            {
+                for (int j = 0; j < a.Length - 1 - i; j++)
+                {
+                    if (a[j] > a[j + 1])
+                    {
+                        tmp = a[j + 1];
+                        a[j + 1] = a[j];
+                        a[j] = tmp;
+                    }
+                }
+            }
+            Console.WriteLine("\nThe modified array :");
+            foreach (int i in a)
+                Console.Write(i + " ");
+            Console.ReadLine();
         }
     }
 }
