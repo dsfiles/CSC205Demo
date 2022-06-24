@@ -1,20 +1,20 @@
 ﻿using System;
-interface IAnimal // Interface
-{
-    void animalSound(); // interface method (empty body)
+public enum Season
+{ //names of enum members
+    Spring,
+    Summer,
+    Autumn,
+    Winter
 }
-class Pig : IAnimal
-{  // Pig "implements" the IAnimal interface
-    public void animalSound()
-    {
-        Console.WriteLine("The pig says: wee wee");
-    }
-}
-class Program
+public class EnumConversionExample
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Pig myPig = new Pig();  // Create a Pig object
-        myPig.animalSound();
+        Season a = Season.Autumn;
+        Console.WriteLine($"Integral value of {a} is {(int)a}");
+        var b = (Season)1;
+        Console.WriteLine(b);  // output: Summer
+        var c = (Season)4;
+        Console.WriteLine(c);  // output: 4
     }
 }
