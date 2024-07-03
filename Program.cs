@@ -8,16 +8,30 @@ namespace CSC205Demo
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        public static void Zoop()
         {
-            Console.WriteLine("first line");
-            NewLine(); NewLine(); NewLine();
-            Console.WriteLine("last line");
-            Console.ReadKey();
+            Baffle();
+            Console.Write("You wugga ");
+            Baffle();
         }
-        static void NewLine()
+
+        public static void Main(string[] args)
         {
-            Console.WriteLine("---");
+            Console.Write("No, I ");
+            Zoop();
+            Console.Write("I ");
+            Baffle();
+        }
+
+        public static void Baffle()
+        {
+            Console.Write("wug");
+            Ping();
+        }
+        public static void Ping()
+        {
+            Console.WriteLine(".");
         }
     }
 }
