@@ -12,7 +12,7 @@ namespace CSC205Demo
         {
             double pi = 3.14159;
             int p = (int)pi;
-            double q = Math.Round(pi * 20.0);
+            double q = Math.Round(pi * 20.1);
 
             Console.WriteLine(p);
             Console.WriteLine(q); 
