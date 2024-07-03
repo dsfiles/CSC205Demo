@@ -10,13 +10,14 @@ namespace CSC205Demo
     {
         static void Main(string[] args)
         {
-            double pi = 3.14159;
-            int p = (int)pi;
-            double q = Math.Round(pi * 20.1);
-
-            Console.WriteLine(p);
-            Console.WriteLine(q); 
+            Console.WriteLine("first line");
+            NewLine(); NewLine(); NewLine();
+            Console.WriteLine("last line");
             Console.ReadKey();
+        }
+        static void NewLine()
+        {
+            Console.WriteLine("---");
         }
     }
 }
