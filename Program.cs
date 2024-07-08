@@ -1,18 +1,18 @@
-﻿public class Program
-{
+﻿public class Program {
     static void Main() {
+        WriteTable(6, 6);
+    }
+    static void WriteTable(int m, int n)
+    {
         int i = 1;
-        while (i <= 6) {
-            WriteMultiples(i);
+        while (i <= m)
+        {
+            for (int j = 1; j <= n; j++)
+            {
+                System.Console.Write(j * i + " ");
+            }
+            System.Console.WriteLine();
             i = i + 1;
         }
-    }
-    static void WriteMultiples(int n) {
-        int i = 1;
-        while (i <= 6) {
-            System.Console.Write(n * i + " ");
-            i++;
-        }
-        System.Console.WriteLine();
     }
 }
