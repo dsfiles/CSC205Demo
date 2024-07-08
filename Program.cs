@@ -1,18 +1,22 @@
-﻿public class Program {
-    static void Main() {
-        WriteTable(6, 6);
-    }
-    static void WriteTable(int m, int n)
+﻿using System;
+
+public class Program
+{
+    static void Main()
     {
-        int i = 1;
-        while (i <= m)
-        {
-            for (int j = 1; j <= n; j++)
-            {
-                System.Console.Write(j * i + " ");
-            }
-            System.Console.WriteLine();
-            i = i + 1;
-        }
+        int i = 3;
+        Console.WriteLine(i);   
+        Console.WriteLine(i++); 
+        Console.WriteLine(i);   
+        double a = 1.5;
+        Console.WriteLine(a);   
+        Console.WriteLine(++a); 
+        Console.WriteLine(a);   
+        int x, y, z = 1;
+        x = z++;
+        y = ++z;
+        Console.WriteLine(x);   
+        Console.WriteLine(y);   
     }
+
 }
