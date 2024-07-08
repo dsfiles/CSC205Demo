@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CSC205Demo{
-    internal class Program{
-        public static void Zoop() {
-            Baffle();
-            Console.Write("You wugga ");
-            Baffle();
-        }
-        public static void Main(string[] args){
-            Console.Write("No, I ");
-            Zoop();
-            Console.Write("I ");
-            Baffle();
-        }
-        public static void Baffle(){
-            Console.Write("wug");
-            Ping();
-        }
-        public static void Ping(){
-            Console.WriteLine(".");
+﻿// Collatz Conjecture textbook page 63 
+using System;
+public class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter an integer (>1) to check Collatz Conjecture:");
+        int n = int.Parse(Console.ReadLine());
+        Sequence(n);
+    }
+    public static void Sequence(int n)
+    {
+        while (n != 1)
+        {
+            Console.WriteLine(n);
+            if (n % 2 == 0)
+            { // n is even
+                n = n / 2;
+            }
+            else
+            { // n is odd
+                n = n * 3 + 1;
+            }
         }
     }
 }
