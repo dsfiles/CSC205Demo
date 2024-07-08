@@ -4,6 +4,7 @@
         int i = 1;
         while (i <= 6) {
             WriteMultiples(i);
+            i = i + 1;
         }
     }
     static void WriteMultiples(int n) {
