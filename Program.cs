@@ -1,22 +1,32 @@
 ﻿using System;
-public class Program
+class Program
 {
     static void Main(string[] args)
     {
-        string name1 = "Alan Turing";
-        string name2 = "Ada Lovelace";
-        int flag = name1.CompareTo(name2);
-        if (flag == 0)
+        int a, b, c;
+        Console.WriteLine("Enter the first interger:");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the second interger:");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the third interger:");
+        c = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"The largest number is {LargestOfThree(a, b, c)}");
+    }
+    public static int LargestOfThree(int a, int b, int c)
+    {
+        int result;
+        if (a >= b && a >= c)
         {
-            Console.WriteLine("The names are the same.");
+            result = a;
         }
-        else if (flag < 0)
+        else if (b >= c && b >= a)
         {
-            Console.WriteLine("name1 comes before name2.");
+            result = b;
         }
-        else if (flag > 0)
+        else
         {
-            Console.WriteLine("name2 comes before name1");
+            result = c;
         }
+        return result;
     }
 }
