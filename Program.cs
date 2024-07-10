@@ -6,6 +6,7 @@ public class Program
         string str;
         Console.WriteLine("Please enter your name:");
         str = Console.ReadLine();
+
         Console.WriteLine("Please enter your age (1-99):");
         int age = 0;
         age = Convert.ToInt32(Console.ReadLine());
