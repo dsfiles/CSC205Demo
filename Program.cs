@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        string fruit = "banana";
+        string fruit = "banana"; 
         int length = fruit.Length;
         int count = 0;
         int index = 0;
