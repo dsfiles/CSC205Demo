@@ -1,32 +1,22 @@
 ﻿using System;
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        int a, b, c;
-        Console.WriteLine("Enter the first interger:");
-        a = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter the second interger:");
-        b = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter the third interger:");
-        c = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"The largest number is {LargestOfThree(a, b, c)}");
+        string str;
+        Console.WriteLine("Please enter your name:");
+        str = Console.ReadLine();
+        Console.WriteLine("Please enter your age (1-99):");
+        int age = 0;
+        age = Convert.ToInt32(Console.ReadLine());
+        Greeting(str, age);
     }
-    public static int LargestOfThree(int a, int b, int c)
+    public static void Greeting(string name, int age)
     {
-        int result;
-        if (a >= b && a >= c)
-        {
-            result = a;
-        }
-        else if (b >= c && b >= a)
-        {
-            result = b;
-        }
+        Console.WriteLine("Hello " + name + "!");
+        if (age > 21)
+            Console.WriteLine("you can buy alcohol!");
         else
-        {
-            result = c;
-        }
-        return result;
+            Console.WriteLine("Sorry, you can't buy alcohol!");
     }
 }
