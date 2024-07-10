@@ -1,23 +1,30 @@
-﻿using System;
-public class Program
+﻿// code example from textbook page 169
+using System;
+using System.IO;
+namespace ThinkSharp
 {
-    public static void Main(string[] args)
+    public class ListFile
     {
-        string str;
-        Console.WriteLine("Please enter your name:");
-        str = Console.ReadLine();
-
-        Console.WriteLine("Please enter your age (1-99):");
-        int age = 0;
-        age = Convert.ToInt32(Console.ReadLine());
-        Greeting(str, age);
-    }
-    public static void Greeting(string name, int age)
-    {
-        Console.WriteLine("Hello " + name + "!");
-        if (age > 21)
-            Console.WriteLine("you can buy alcohol!");
-        else
-            Console.WriteLine("Sorry, you can't buy alcohol!");
+        public static void Main()
+        { //make sure words.txt is in the same folder as the .exe file
+            processFile("words.txt");
+        }
+        private static void processFile(string filename)
+        {
+            string line;
+            int count = 1;
+            TextReader reader = new StreamReader(filename);
+            while (true)
+            {
+                line = reader.ReadLine();
+                if (line == null)
+                {
+                    break;
+                }
+                Console.WriteLine(count + ": " + line);
+                count++;
+            }
+            reader.Close();
+        }
     }
 }
