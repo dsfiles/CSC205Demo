@@ -1,31 +1,32 @@
-﻿using System;
-namespace ThinkSharp{
-    public class Program {
-        public static void Main(string[] args) {
-            int[] scores = RandomArray(30);
-            WriteArray(scores);
-            int[] counts = new int[100];
-            for (int i = 0; i < scores.Length; i++) {
-                //int index = scores[i];
-                //counts[index]++;
-                counts[scores[i]]++;
-            }
-            WriteArray(counts);
-        }
-        public static int[] RandomArray(int size) {
-            Random random = new Random();
-            int[] array = new int[size];
-            for (int i = 0; i < array.Length; i++) {
-                array[i] = random.Next(0, 100);
-            }
-            return array;
-        }
-        public static void WriteArray(int[] array)
+﻿using CSC205Demo;
+using System;
+namespace CSC205Demo
+{
+    public class Program
+    {
+        public static void Main(string[] args)
         {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            Time t1 = new Time();
+            Console.WriteLine(t1.hour);
+            Console.WriteLine(t1.minute);
+            Console.WriteLine(t1.second);
+
+            Time t2 = new Time();
+            Console.WriteLine(t2.hour);
+            Console.WriteLine(t2.minute);
+            Console.WriteLine(t2.second);
+
+            Time t3 = new Time(3, 50, 23);
+            Console.WriteLine(t3.hour);
+            Console.WriteLine(t3.minute);
+            Console.WriteLine(t3.second);
+
         }
     }
 }
+//public Time()
+//{
+//    this.hour = 1;
+//    this.minute = 2;
+//    this.second = 3.0;
+//}
