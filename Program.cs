@@ -1,30 +1,19 @@
-﻿// code example from textbook page 169
-using System;
-using System.IO;
-namespace ThinkSharp
+﻿using System;
+public class Program
 {
-    public class ListFile
+    public static void Main(string[] args)
     {
-        public static void Main()
-        { //make sure words.txt is in the same folder as the .exe file
-            processFile("words.txt");
-        }
-        private static void processFile(string filename)
+        //int[] a = new int[4];
+        //int[] a = new int[4] {1,2,3,4 };
+        int[] a = { 1, 2, 3, 4 };
+        foreach (int i in a)
         {
-            string line;
-            int count = 1;
-            TextReader reader = new StreamReader(filename);
-            while (true)
-            {
-                line = reader.ReadLine();
-                if (line == null)
-                {
-                    break;
-                }
-                Console.WriteLine(count + ": " + line);
-                count++;
-            }
-            reader.Close();
+            Console.WriteLine(i);
+        }
+        int[] b = a;
+        foreach (int i in b)
+        {
+            Console.WriteLine(i);
         }
     }
 }
