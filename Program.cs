@@ -6,8 +6,9 @@ namespace ThinkSharp{
             WriteArray(scores);
             int[] counts = new int[100];
             for (int i = 0; i < scores.Length; i++) {
-                int index = scores[i];
-                counts[index]++;
+                //int index = scores[i];
+                //counts[index]++;
+                counts[scores[i]]++;
             }
             WriteArray(counts);
         }
