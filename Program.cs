@@ -17,9 +17,4 @@ namespace CSC205Demo
         }
     }
 }
-//public Time()
-//{
-//    this.hour = 1;
-//    this.minute = 2;
-//    this.second = 3.0;
-//}
+
