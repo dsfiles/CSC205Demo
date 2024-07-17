@@ -42,5 +42,11 @@ namespace CSC205Demo
             Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
         }
 
+        public static void WriteTime(Time t)
+        {
+            Console.WriteLine(t.hour + ":" + t.minute + ":" + t.second);
+        }
+
+
     }
 }

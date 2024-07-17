@@ -15,7 +15,8 @@ namespace CSC205Demo
             Time t3 = new Time(3, 50, 23);
             Console.WriteLine(t3);
             t3.WriteTime();
-           
+            Time.WriteTime(t3);
+            
         }
     }
 }
