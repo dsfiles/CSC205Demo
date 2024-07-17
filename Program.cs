@@ -1,51 +1,42 @@
-﻿
-using System;
-
-public class Vehicle // base class
+﻿using System;
+public class Person // parent class
 {
-    public string model;
-    public int year;
-    public Vehicle(string model, int year)
+    public string name;
+    public int age;
+    public void DisplayNameAge()
     {
-        this.model = model;
-        this.year = year;
+        Console.WriteLine($"{name} is {age} years old.");
     }
 }
 
-public class Car : Vehicle
+class Teacher : Person // Child class
 {
-    private int seating_capacity;
-    public Car(string model, int year, int capacity) : base(model, year)
-    {
-        seating_capacity = capacity;
-    }
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"model: {model}, year: {year}, seating capacity: {seating_capacity}");
-    }
+    public string subject;
 }
 
-public class Truck : Vehicle
+class Student : Person // Child class
 {
-    private int load_capacity;
-    public Truck(string model, int year, int capacity) : base(model, year)
-    {
-        load_capacity = capacity;
-    }
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"model: {model}, year: {model}, load capacity: {load_capacity} tons");
-    }
+    public double gpa;
 }
 
 public class Program
 {
     static void Main(string[] args)
     {
-        var car = new Car("Honda Accord", 2019, 5);
-        var truck = new Truck("kenworth W990", 2020, 50);
-        car.DisplayInfo();
-        truck.DisplayInfo();
+        Person person = new Person();
+        person.name = "Allan";
+        person.age = 21;
+
+        Teacher teacher = new Teacher();
+        teacher.name = "Tom";
+        teacher.age = 55;
+        teacher.subject = "Computer Science";
+        teacher.DisplayNameAge();
+
+        Student student = new Student();
+        student.name = "Sara";
+        student.age = 19;
+        student.gpa = 3.5;
+        student.DisplayNameAge();
     }
 }
-
