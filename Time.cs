@@ -36,17 +36,16 @@ namespace CSC205Demo
         {
             return this.hour + ":" + this.minute + ":" + this.second;
         }
-
         public void WriteTime()
         {
-            Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
-        }
+            //Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
+            Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:0.00}", this.hour, this.minute, this.second));
 
+        }
         public void WriteTime2(Time t)
         {
             Console.WriteLine(t.hour + ":" + t.minute + ":" + t.second);
         }
-
         public static void WriteTime(Time t)
         {
             Console.WriteLine(t.hour + ":" + t.minute + ":" + t.second);
