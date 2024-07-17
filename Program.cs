@@ -1,25 +1,38 @@
-﻿using CSC205Demo;
-using System;
-namespace CSC205Demo
+﻿using System;
+public class Book
 {
-    public class Program
+    public string title;
+    public string isbn;
+    public double price;
+    public Book()
     {
-        public static void Main(string[] args)
-        {
-            Time t1 = new Time();
-            Time t2 = new Time(1, 19);
+        title = "";
+        isbn = "";
+        price = 0.0;
+    }
+    public Book(string t, string i, double p)
+    {
+        title = t;
+        isbn = i;
+        price = p;
+    }
 
-            Time t3 = new Time(3, 50, 23);
-            Console.WriteLine(t3);
-            Console.WriteLine(t3.ToString());
-            t3.WriteTime();
-            t3.WriteTime2(t3);
-            t2.WriteTime2(t3);
-            t1.WriteTime2(t3);
-            Time.WriteTime(t3);
-            
-            
-        }
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Book book1 = new Book("C# 9 and .NET 5", "180056810X", 42.74);
+        //Book book1 = new Book();
+        //book1.title = "C# 9 and .NET 5";
+        //book1.isbn = "180056810X";
+        //book1.price = 42.74;
+        Console.WriteLine(book1.title);
+
+        Book book2 = new Book();
+        book2.title = "C# in Depth";
+        book2.isbn = "1617294535";
+        book2.price = 38.99;
+        Console.WriteLine(book2.title);
     }
 }
-

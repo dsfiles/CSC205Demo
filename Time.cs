@@ -39,7 +39,7 @@ namespace CSC205Demo
         public void WriteTime()
         {
             //Console.WriteLine(this.hour + ":" + this.minute + ":" + this.second);
-            Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:0.00}", this.hour, this.minute, this.second));
+            Console.WriteLine(String.Format("{0:D2}:{1:D2}:{2:00.00}", this.hour, this.minute, this.second));
 
         }
         public void WriteTime2(Time t)
