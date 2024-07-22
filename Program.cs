@@ -1,16 +1,19 @@
 ﻿using System;
-public static class StaticClass {
-    public static string staticStr = "A static variable (or data member)";
-    public static void StaticMethod()
+public class StaticClass
+{
+    //public string staticStr = "A static variable (or data member)";
+    public string Str { get; set; }
+    public void StaticMethod()
     {
-        Console.WriteLine(staticStr);
+        Console.WriteLine(Str);
     }
 }
 public class Program {
     static void Main(string[] args)
     {
-        // StaticClass sc = new StaticClass(); // can’t be instantiated!
-        Console.WriteLine(StaticClass.staticStr);
-        StaticClass.StaticMethod();
+        //StaticClass sc = new StaticClass(); 
+        StaticClass sc = new StaticClass {Str = "I'm a property!"};
+        Console.WriteLine(sc.Str);
+        sc.StaticMethod();
     }
 }
