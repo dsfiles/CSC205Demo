@@ -1,26 +1,24 @@
 ﻿using System;
 
-public class Automobile
+public class Counter
 {
-    public static int NumberOfWheels = 4;
-    public static int SizeOfGasTank
-    {
-        get { return 15; } // SizeOfGasTank is C# property
-    }
-    public static void Drive()
-    {
-        Console.WriteLine("I'm driving!");
-    }
-    // Other non-static fields and properties...
+    public static int instances = 0;
+    public Counter()
+    { instances++; }
 }
-public class Program
+public class App
 {
-    public static void Main(string[] args)
+    static void Main(String[] args)
     {
-        Automobile.Drive();
-        Console.WriteLine(Automobile.NumberOfWheels);
-        var car = new Automobile();
-        Console.WriteLine(Automobile.SizeOfGasTank);
-        // car.Drive() does not work
+        Counter c0 = new Counter();
+        Console.WriteLine($"{Counter.instances} instance(s) of the Counter class!");
+        Counter c1 = new Counter();
+        Console.WriteLine($"{Counter.instances} instance(s) of the Counter class!");
+        Counter c2 = new Counter();
+        Console.WriteLine($"{Counter.instances} instance(s) of the Counter class!");
+        Counter c3 = new Counter();
+        Console.WriteLine($"{Counter.instances} instance(s) of the Counter class!");
+        Counter c4 = new Counter();
+        Console.WriteLine($"{Counter.instances} instance(s) of the Counter class!");
     }
 }
