@@ -1,19 +1,26 @@
 ﻿using System;
-public class StaticClass
+
+public class Automobile
 {
-    //public string staticStr = "A static variable (or data member)";
-    public string Str { get; set; }
-    public void StaticMethod()
+    public static int NumberOfWheels = 4;
+    public static int SizeOfGasTank
     {
-        Console.WriteLine(Str);
+        get { return 15; } // SizeOfGasTank is C# property
     }
-}
-public class Program {
-    static void Main(string[] args)
+    public static void Drive()
     {
-        //StaticClass sc = new StaticClass(); 
-        StaticClass sc = new StaticClass {Str = "I'm a property!"};
-        Console.WriteLine(sc.Str);
-        sc.StaticMethod();
+        Console.WriteLine("I'm driving!");
+    }
+    // Other non-static fields and properties...
+}
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Automobile.Drive();
+        Console.WriteLine(Automobile.NumberOfWheels);
+        var car = new Automobile();
+        Console.WriteLine(Automobile.SizeOfGasTank);
+        // car.Drive() does not work
     }
 }
