@@ -1,25 +1,35 @@
 ﻿using System;
-
-abstract class Shape
+class Point
 {
-    public virtual int GetArea() 
-    { 
-        return 1;
+    public int x, y;
+    public Point(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    // remove (by commenting out) the following Equals method to see if the result is different
+    public override bool Equals(object obj)
+    {   // If this and obj do not refer to the same type, then they are not equal.
+        if (obj.GetType() != this.GetType()) return false;
+        // Return true if x and y fields match.
+        var other = (Point)obj;
+        return (this.x == other.x) && (this.y == other.y);
+    }
+    public override String ToString()
+    {
+        return $"({x}, {y})";
     }
 }
 
-class Square : Shape
+public sealed class App
 {
-    private int _side;
-
-    public Square(int n) => _side = n;
-
-    // GetArea method is required to avoid a compile-time error.
-    public override int GetArea() => _side * _side;
-
     static void Main()
     {
-        var sq = new Square(12);
-        Console.WriteLine($"Area of the square = {sq.GetArea()}");
+        var p1 = new Point(1, 2);
+        var p2 = p1;
+        var p3 = new Point(1, 2);
+        Console.WriteLine(p1.Equals(p2));
+        Console.WriteLine(p1.Equals(p3));
+        Console.WriteLine($"p1's value is: {p1.ToString()}");
     }
-} // Output: Area of the square = 144
+}
