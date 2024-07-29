@@ -8,7 +8,7 @@ namespace CSC205Quiz02
         {
             // car1 does not have any information.
             var car1 = new Vehicle();
-            var car2 = new Vehicle("1FM0122021", "Ford", "Mercury", 0);
+            var car2 = new Vehicle() { Vin = "1FM0122021", Make = "Ford", Model = "Mercury", Mileage = 0 };
             car2.Drive(100);
             Console.Write("Car #1: ");
             car1.Display();
@@ -22,28 +22,18 @@ namespace CSC205Quiz02
 
     public class Vehicle
     {
-        private string vin, make, model;
-        private int mileage;
-        public Vehicle() // constructor #1
+        public string Vin { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Mileage { get; set; }
+
+        public void Drive(int miles)
         {
-            vin = "N/A"; make = "N/A"; model = "N/A";
-            mileage = 0;
-        }
-        public Vehicle(string vin, string make, string model, int mileage)
-        {  // constructor #2 with parameters
-            this.vin = vin;
-            this.make = make;
-            this.model = model;
-            this.mileage = mileage;
-        }
-        public void Drive(int mileage)
-        {
-            this.mileage += mileage;
+            this.Mileage += miles;
         }
         public void Display()
         {
-            Console.WriteLine($"vin: {vin}, make: {make}, model: {model}, mileage: {mileage}");
+            Console.WriteLine($"Vin: {Vin}, make: {Make}, Model: {Model}, Mileage: {Mileage}");
         }
     }
 }
-
