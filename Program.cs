@@ -1,35 +1,32 @@
 ﻿using System;
-class Point
+class Car
 {
-    public int x, y;
-    public Point(int x, int y)
+    private string vin, make, model;
+    private int mileage;
+    public Car(string vin, string make, string model, int mileage=0)
     {
-        this.x = x;
-        this.y = y;
+        this.vin = vin;
+        this.make = make;
+        this.model = model;
+        this.mileage = mileage;
     }
-    // remove (by commenting out) the following Equals method to see if the result is different
-    public override bool Equals(object obj)
-    {   // If this and obj do not refer to the same type, then they are not equal.
-        if (obj.GetType() != this.GetType()) return false;
-        // Return true if x and y fields match.
-        var other = (Point)obj;
-        return (this.x == other.x) && (this.y == other.y);
-    }
-    public override String ToString()
+
+    public void Drive(int miles) => mileage += (miles > 0) ? miles : 0;
+
+    public void Display() => Console.WriteLine($"VIN: {vin}\nMake: {make}\nModel: {model}\nMileage: {mileage}\n");
+}
+
+class Program
+{
+   static void Main()
     {
-        return $"({x}, {y})";
+        var car1 = new Car("2HGCM82633A004353", "Kia", "Sorento", 30000);
+        var car2 = new Car("3FTFW1EF1EKE89766", "Nissan", "Titan XD");
+        car1.Drive(120);
+        car2.Drive(180);
+
+        car1.Display();
+        car2.Display();
     }
 }
 
-public sealed class App
-{
-    static void Main()
-    {
-        var p1 = new Point(1, 2);
-        var p2 = p1;
-        var p3 = new Point(1, 2);
-        Console.WriteLine(p1.Equals(p2));
-        Console.WriteLine(p1.Equals(p3));
-        Console.WriteLine($"p1's value is: {p1.ToString()}");
-    }
-}
