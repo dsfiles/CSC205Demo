@@ -1,27 +1,25 @@
 ﻿using System;
-using System.CodeDom;
-
-class TestClass
+public class Cat
 {
-    public abstract class Shape {
-        public const double PI = Math.PI;
-        public abstract double Area();
+    // Auto-implemented properties.
+    public int Age { get; set; }
+    public string Name { get; set; }
+    public Cat() { }
+    public Cat(string name)
+    {
+        this.Name = name;
     }
-    public class Circle : Shape {
-        public double R {  get; set; }
-        public override double Area() => PI * R * R;
-    }
-    public class Cylinder : Shape {
-        public double R {  get; set; }
-        public double H { get; set; }
-        public override double Area() => 2 * PI * R * R + 2 * PI * R * H;
-    }
-    static void Main() {
-        double r = 3.0, h = 5.0;
-        Shape c = new Circle() {R = r};
-        Shape l = new Cylinder() { R = r, H = h };
-        // Display results.
-        Console.WriteLine("Area of Circle   = {0:F1}", c.Area());
-        Console.WriteLine("Area of Cylinder = {0:F2}", l.Area());
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Cat cat = new Cat { Age = 10, Name = "Fluffy" };
+        Cat sameCat = new Cat("Fluffy") { Age = 10 };
+        Cat sameSameCat = new Cat() { Age=10, Name="Fluffy"};
+        Console.WriteLine($"cat name: {cat.Name}, cat age: {cat.Age}");
+        Console.WriteLine($"cat name: {sameCat.Name}, cat age: {sameCat.Age}");
+        Console.WriteLine($"cat name: {sameSameCat.Name}, cat age: {sameSameCat.Age}");
+
     }
 }
