@@ -1,36 +1,31 @@
 ﻿using System;
+using System.CodeDom;
 
 class TestClass
 {
-    public class Shape
-    {
+    public abstract class Shape {
         public const double PI = Math.PI;
-        protected double _x, _y;
-        public Shape(double x, double y)
-        {
-            _x = x;
-            _y = y;
-        }
-        public virtual double Area()
-        {
-            return _x * _y;
-        }
+        public abstract double Area();
     }
-    public class Circle : Shape
-    {
-        public Circle(double r) : base(r, 0) { }
-
+    public class Circle : Shape {
+        double r;
+        public Circle(double r) {
+            this.r = r;
+        }
         public override double Area()
         {
-            return PI * _x * _x;
+            return PI * r * r;
         }
     }
-    public class Cylinder : Shape
-    {
-        public Cylinder(double r, double h) : base(r, h) { }
+    public class Cylinder : Shape {
+        private double r, h;
+        public Cylinder(double r, double h){
+            this.r = r;
+            this.h = h;
+        }
         public override double Area()
         {
-            return 2 * PI * _x * _x + 2 * PI * _x * _y;
+            return 2 * PI * r * r + 2 * PI * r * h;
         }
     }
     static void Main()
@@ -39,7 +34,7 @@ class TestClass
         Shape c = new Circle(r);
         Shape l = new Cylinder(r, h);
         // Display results.
-        Console.WriteLine("Area of Circle   = {0:F2}", c.Area());
+        Console.WriteLine("Area of Circle   = {0:F1}", c.Area());
         Console.WriteLine("Area of Cylinder = {0:F2}", l.Area());
     }
 }
