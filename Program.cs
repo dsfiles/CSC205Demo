@@ -8,14 +8,17 @@ class TestClass
         public abstract double Area();
     }
     public class Circle : Shape {
-        double r;
-        public Circle(double r) {
-            this.r = r;
-        }
-        public override double Area()
-        {
-            return PI * r * r;
-        }
+        //double r;
+        //public Circle(double r) {
+        //    this.r = r;
+        //}
+        //public override double Area()
+        //{
+        //    return PI * r * r;
+        //}
+        public double R {  get; set; }
+        public override double Area() => PI * R * R;
+
     }
     public class Cylinder : Shape {
         private double r, h;
@@ -31,7 +34,7 @@ class TestClass
     static void Main()
     {
         double r = 3.0, h = 5.0;
-        Shape c = new Circle(r);
+        Shape c = new Circle() {R=r};
         Shape l = new Cylinder(r, h);
         // Display results.
         Console.WriteLine("Area of Circle   = {0:F1}", c.Area());
