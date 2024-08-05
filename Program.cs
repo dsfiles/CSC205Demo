@@ -14,15 +14,12 @@ class Example {
         }
         
         var numbersStack = new Stack<string>();
-        //foreach (var number in numbers) {
-        //    numbersStack.Push(number);
-        //}
-        int count = numbers.Count;
-        for (int i = 0; i < count; i++)
-        {
-            string number = numbers.Dequeue();
-            numbersStack.Push(number);
-            //numbersStack.Push((numbers.Dequeue()));
+       
+        //int count = numbers.Count;
+        //for (int i = 0; i < count; i++)
+        while(numbers.Count > 0) {
+            Console.WriteLine("numbers.Count: " + numbers.Count);
+            numbersStack.Push((numbers.Dequeue()));         
         }
 
         Console.WriteLine("Contents of stack:");
