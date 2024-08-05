@@ -1,28 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-
 class Example
 {
     public static void Main()
     {
-        var numbers = new Stack<string>();
-        numbers.Push("one");
-        numbers.Push("two");
-        numbers.Push("three");
-
-        // A stack can be enumerated without disturbing its contents.
-        Console.WriteLine("Contents of the stack:");
+        Queue<string> numbers = new Queue<string>();
+        numbers.Enqueue("one");
+        numbers.Enqueue("two");
+        numbers.Enqueue("three");
+        numbers.Enqueue("four");
+        // A queue can be enumerated without disturbing its contents.
         foreach (string number in numbers)
         {
             Console.WriteLine(number);
         }
-        Console.WriteLine("\nPopping '{0}'", numbers.Pop());
-        Console.WriteLine("Peek at next item: {0}",
-            numbers.Peek()); // Peek does not remove the item
-        Console.WriteLine("Contents of the stack now:");
+        Console.WriteLine("\nDequeuing '{0}'", numbers.Dequeue());
+        Console.WriteLine("Peek at next item to dequeue: {0}", numbers.Peek());
+        Console.WriteLine("Dequeuing '{0}'", numbers.Dequeue());
+        Console.WriteLine("\nItems in the queue now:");
         foreach (string number in numbers)
         {
             Console.WriteLine(number);
         }
     }
-} //https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.stack-1?view=net-8.0
+}
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1
