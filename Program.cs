@@ -1,26 +1,20 @@
 ﻿using System;
-
-public class ExceptionTest
+using System.Collections;
+public class StackExample
 {
-    static double SafeDivision(int x, int y)
-    {
-        //if (y == 0) throw new DivideByZeroException();
-        return x / y;
-    }
     public static void Main()
-    {
-        // Change the values to see exception handling behavior.
-        int a = 98, b = 0;
-        double result;
-        
-        try
-        {
-            result = SafeDivision(a, b);
-            Console.WriteLine("{0} divided by {1} = {2}", a, b, result);
-        }
-        catch (DivideByZeroException)
-        {
-            Console.WriteLine("Attempted divide by zero.");
-        }
+    {   // Creates and initializes a new Stack.
+        var myStack = new Stack();
+        myStack.Push("Apple");
+        myStack.Push("Orange");
+        myStack.Push("Banana");
+        Console.WriteLine($"myStack count: {myStack.Count}");
+        // Displays the items in the stack
+        foreach (var obj in myStack) { Console.WriteLine(obj); }
+        myStack.Pop(); // pop the top item then display the stack again
+        Console.WriteLine("\nAfter removing the top item::");
+        foreach (var obj in myStack) { Console.WriteLine(obj); }
     }
 }
+// for more, visit:
+// https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-8.0
