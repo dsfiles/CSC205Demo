@@ -27,6 +27,12 @@ class Example {
             Console.WriteLine(number); ;
         }
 
+        // your code here to move items back to queue from stack
+        while (numbersStack.Count > 0)
+        {
+            numbers.Enqueue((numbersStack.Pop()));
+        }
+
         Console.WriteLine("Contents of queue again:");
         foreach (var number in numbers)
         {
