@@ -1,25 +1,28 @@
 ﻿using System;
-public class Cat
-{
-    // Auto-implemented properties.
-    public int Age { get; set; }
-    public string Name { get; set; }
-    public Cat() { }
-    public Cat(string name)
-    {
-        this.Name = name;
-    }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        Cat cat = new Cat { Age = 10, Name = "Fluffy" };
-        Cat sameCat = new Cat("Fluffy") { Age = 10 };
-        Cat sameSameCat = new Cat() { Age=10, Name="Fluffy"};
-        Console.WriteLine($"cat name: {cat.Name}, cat age: {cat.Age}");
-        Console.WriteLine($"cat name: {sameCat.Name}, cat age: {sameCat.Age}");
-        Console.WriteLine($"cat name: {sameSameCat.Name}, cat age: {sameSameCat.Age}");
 
+public class ExceptionTest
+{
+    static double SafeDivision(double x, double y)
+    {
+        //if (y == 0) throw new DivideByZeroException();
+        return x / y;
+    }
+    public static void Main()
+    {
+        // Change the values to see exception handling behavior.
+        double a = 98, b = 2;
+        double result;
+        result = SafeDivision(a, b);
+        Console.WriteLine("{0} divided by {1} = {2}", a, b, result);
+        
+        //try
+        //{
+        //    result = SafeDivision(a, b);
+        //    Console.WriteLine("{0} divided by {1} = {2}", a, b, result);
+        //}
+        //catch (DivideByZeroException)
+        //{
+        //    Console.WriteLine("Attempted divide by zero.");
+        //}
     }
 }
