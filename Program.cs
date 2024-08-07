@@ -1,43 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-class Example {
+using System.Collections;
+public class SamplesArrayList {
     public static void Main() {
-        var numbers = new Queue<string>();
-        numbers.Enqueue("one");
-        numbers.Enqueue("two");
-        numbers.Enqueue("three");
-        numbers.Enqueue("four");
-        // A queue can be enumerated without disturbing its contents.
-        Console.WriteLine("Contents of queue:");
-        foreach (var number in numbers) {
-            Console.WriteLine(number);
-        }
-        
-        var numbersStack = new Stack<string>();
-       
-        //int count = numbers.Count;
-        //for (int i = 0; i < count; i++)
-        while(numbers.Count > 0) {
-            Console.WriteLine("numbers.Count: " + numbers.Count);
-            numbersStack.Push((numbers.Dequeue()));         
-        }
-
-        Console.WriteLine("Contents of stack:");
-        foreach (var number in numbersStack) {
-            Console.WriteLine(number); ;
-        }
-
-        // your code here to move items back to queue from stack
-        while (numbersStack.Count > 0)
-        {
-            numbers.Enqueue((numbersStack.Pop()));
-        }
-
-        Console.WriteLine("Contents of queue again:");
-        foreach (var number in numbers)
-        {
-            Console.WriteLine(number);
-        }
-
+        // Creates and initializes a new ArrayList.
+        ArrayList myAL = new ArrayList();
+        myAL.Add("Hello");
+        myAL.Add("World");
+        myAL.Add("!");
+        // Displays the properties and values of the ArrayList.
+        Console.WriteLine("myAL");
+        Console.WriteLine("    Count:    {0}", myAL.Count);
+        Console.WriteLine("    Capacity: {0}", myAL.Capacity);
+        Console.Write("    Values:");
+        PrintValues(myAL);
+    }
+    public static void PrintValues(IEnumerable myList) {
+        foreach (Object obj in myList)
+            Console.Write("   {0}", obj);
+        Console.WriteLine();
     }
 }
