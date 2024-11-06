@@ -1,5 +1,5 @@
 ﻿using System;
-public class Vehicle // base class
+public abstract class Vehicle // base class
 {
     public string model;
     public int year;
@@ -8,10 +8,10 @@ public class Vehicle // base class
         this.model = model;
         this.year = year;
     }
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"model: {model}, year: {year}");
-    }
+    public abstract void DisplayInfo();
+    //{
+    //    Console.WriteLine($"model: {model}, year: {year}");
+    //}
 }
 public class Car : Vehicle
 {
@@ -21,7 +21,7 @@ public class Car : Vehicle
         seating_capacity = capacity;
     }
 
-    public void DisplayInfo()
+    public override void DisplayInfo()
     {
         Console.WriteLine($"model: {model}, year: {year}, seating capacity: {seating_capacity}");
     }
@@ -32,7 +32,7 @@ public class Truck : Vehicle {
     {
         load_capacity = capacity;
     }
-    public void DisplayInfo()
+    public override void DisplayInfo()
     {
         Console.WriteLine($"model: {model}, year: {year}, load capacity: {load_capacity} tons");
     }
@@ -41,10 +41,12 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Vehicle v = new Vehicle("vehile model", 2024);
-        v.DisplayInfo();
+        //Vehicle v = new Vehicle("vehile model", 2024);
+        //v.DisplayInfo();
         Car car = new Car("Honda Accord", 2019, 5);
         var truck = new Truck("kenworth W990", 2020, 50);
+        
+        Console.WriteLine(car.GetType());
         car.DisplayInfo();
         truck.DisplayInfo();
     }
