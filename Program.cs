@@ -8,7 +8,7 @@ public class Vehicle // base class
         this.model = model;
         this.year = year;
     }
-    public void DisplayModelYear()
+    public void DisplayInfo()
     {
         Console.WriteLine($"model: {model}, year: {year}");
     }
@@ -20,10 +20,10 @@ public class Car : Vehicle
     {
         seating_capacity = capacity;
     }
+
     public void DisplayInfo()
     {
-        DisplayModelYear();
-        Console.WriteLine($"seating capacity: {seating_capacity}");
+        Console.WriteLine($"model: {model}, year: {year}, seating capacity: {seating_capacity}");
     }
 }
 public class Truck : Vehicle {
@@ -41,6 +41,8 @@ public class Program
 {
     static void Main(string[] args)
     {
+        Vehicle v = new Vehicle("vehile model", 2024);
+        v.DisplayInfo();
         Car car = new Car("Honda Accord", 2019, 5);
         var truck = new Truck("kenworth W990", 2020, 50);
         car.DisplayInfo();
