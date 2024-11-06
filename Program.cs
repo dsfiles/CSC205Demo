@@ -1,54 +1,62 @@
-﻿using System;
-public abstract class Vehicle // base class
-{
-    public string model;
-    public int year;
-    public Vehicle(string model, int year)
-    {
-        this.model = model;
-        this.year = year;
-    }
-    public abstract void DisplayInfo();
-    //{
-    //    Console.WriteLine($"model: {model}, year: {year}");
-    //}
-}
-public class Car : Vehicle
-{
-    private int seating_capacity;
-    public Car(string model, int year, int capacity) : base(model, year)
-    {
-        seating_capacity = capacity;
-    }
+﻿// version 7 – Properties
+using System;
 
-    public override void DisplayInfo()
-    {
-        Console.WriteLine($"model: {model}, year: {year}, seating capacity: {seating_capacity}");
-    }
-}
-public class Truck : Vehicle {
-    private int load_capacity;
-    public Truck(string model, int year, int capacity) : base(model, year)
-    {
-        load_capacity = capacity;
-    }
-    public override void DisplayInfo()
-    {
-        Console.WriteLine($"model: {model}, year: {year}, load capacity: {load_capacity} tons");
-    }
-}
 public class Program
 {
     static void Main(string[] args)
     {
-        //Vehicle v = new Vehicle("vehile model", 2024);
-        //v.DisplayInfo();
-        Car car = new Car("Honda Accord", 2019, 5);
-        var truck = new Truck("kenworth W990", 2020, 50);
-        
-        Console.WriteLine(car.GetType());
-        car.DisplayInfo();
-        truck.DisplayInfo();
+        Teacher teacher = new Teacher("Tom", 55, "Computer Science");
+        teacher.DisplayInfo();
+        Student student = new Student("Sara", 19, 3.5);
+        student.DisplayInfo();
+        student.Gpa = 5.8;
+        student.DisplayInfo();
+        Console.WriteLine(student.Gpa);
     }
 }
 
+abstract class Person
+{ // Parent class
+    private string name;
+    private int age;
+    public Person(string name, int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+    public void DisplayNameAge()
+    { System.Console.WriteLine($"Name：{name}, Age: {age}"); }
+}
+class Teacher : Person
+{ // Child class
+    private string subject;
+    public Teacher(string name, int age, string subject) : base(name, age)
+    { this.subject = subject; }
+    public void DisplayInfo()
+    {
+        base.DisplayNameAge();
+        System.Console.WriteLine($"Teaches {subject}\n");
+    }
+}
+class Student : Person
+{ // Child class
+    private double gpa;
+    public double Gpa { 
+        get 
+        { 
+            return gpa; 
+        } 
+        set 
+        {
+            if (value >= 0.0 && value <= 4.0)
+            { gpa = value; }
+        } 
+    } // Just a Property example
+    public Student(string name, int age, double gpa) : base(name, age)
+    { this.gpa = 3.5; }
+    public void DisplayInfo()
+    {
+        base.DisplayNameAge();
+        System.Console.WriteLine($"GPA: {this.gpa}");
+    }
+}
