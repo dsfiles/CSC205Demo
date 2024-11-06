@@ -1,5 +1,4 @@
 ﻿using System;
-
 public class Vehicle // base class
 {
     public string model;
@@ -14,7 +13,6 @@ public class Vehicle // base class
         Console.WriteLine($"model: {model}, year: {year}");
     }
 }
-
 public class Car : Vehicle
 {
     private int seating_capacity;
@@ -39,7 +37,6 @@ public class Truck : Vehicle {
         Console.WriteLine($"model: {model}, year: {year}, load capacity: {load_capacity} tons");
     }
 }
-
 public class Program
 {
     static void Main(string[] args)
@@ -47,7 +44,7 @@ public class Program
         Car car = new Car("Honda Accord", 2019, 5);
         var truck = new Truck("kenworth W990", 2020, 50);
         car.DisplayInfo();
-        //truck.DisplayInfo();
+        truck.DisplayInfo();
     }
 }
 
