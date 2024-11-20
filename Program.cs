@@ -1,44 +1,23 @@
-﻿// Abstract class
-using System;
-class Sort { 
-    static void Main()
+﻿using System;
+public struct Book {
+    public string title, isbn;
+    public double price;
+    public static void IncreasePrice(Book b)
     {
-        int[] x = { 5, 1, 2, 4, 0};
-        MergeSort(0, x.Length-1, x);
-        foreach (int item in x)
-        {
-            Console.WriteLine(item);
-        }
+        b.price += 10.0;
+        Console.WriteLine("price increased by $10!");
     }
-    static void MergeSort(int left, int right, int[] x)
-    {
-        if (left >= right) return;
-
-        int mid = (left + right) / 2;
-        
-        MergeSort(left, mid, x);
-        MergeSort(mid+1, right, x);
-        
-        Merge(left, right, mid, x); 
-    }
-    static void Merge(int left, int right, int mid, int[] c) {
-        int[] m = new int[c.Length];
-       
-        int i = 0, j = mid, k = 0;
-        
-        while (i<=mid-1 & j<c.Length) {
-            if(c[i] < c[j])
-                m[k++] = c[i++];            
-            else
-                m[k++] = c[j++];
-        }
-        while (i < c.Length)
-            m[k++] = c[i++];   
-
-        while (j < c.Length)
-            m[k++] = c[j++];
-
-        c = m;
-
+}
+public class Program {
+    public static void Main(string[] args) {
+        //Book book1;
+        Book book1 = new Book();
+        //Console.WriteLine(book1.price);
+        book1.title = "C# Programming";
+        book1.isbn = "180056810X";
+        book1.price = 42.74;
+        Console.WriteLine($"title: {book1.title}, ISBN: {book1.isbn}, Price: {book1.price}");
+        Book.IncreasePrice(book1);
+        Console.WriteLine($"title: {book1.title}, ISBN: {book1.isbn}, Price: {book1.price}");
     }
 }
