@@ -1,29 +1,22 @@
 ﻿using System;
 
-public class Program
+public class Node
 {
+        public Node Next;
+        public Node Prev;
+        public int Value;
+}
+
+public class Program { 
     public static void Main()
     {
-        int[] arr = { 1, 3, 5, 7, 9 };
-        Print(arr, "Original array:"); 
-
+        Node node1 = new Node();
+        Node node2 = new Node();
+        Node node3 = new Node();
+        Node head = node1;
+        Node tail = node3;
+        node1.Value = 2;
+        node2.Value = 3;
+        node3.Value = 4;
     }
-
-    static void Print(int[] arr, string msg)
-    {
-        Console.WriteLine(msg);
-        foreach (int i in arr) Console.Write(i + " ");
-        Console.WriteLine();
-    }
-
-    static void Insert(int[] arr, int x, int index) {
-        // your code here to insert x at "index" in arr
-    }
-
-    static void Remove(int[] arr, int index)
-    {
-        // your code here to remove the element at "index"
-    }
-
-
 }
