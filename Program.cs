@@ -37,11 +37,16 @@ public class Program {
         node3.Prev = node4;
 
         Print(head, "After insertin a new node: ");
+
+        // remove the second node (node 2 with value 3)
+        // your code here
+        node1.Next = node4;
+        node4.Prev = node1;
+
+        Print(head, "After linking out node2: ");
+
     }
-
-
-
-    public static void Print(Node iterator, string msg)
+        public static void Print(Node iterator, string msg)
     {
         Console.Write(msg);
         while (iterator != null)
