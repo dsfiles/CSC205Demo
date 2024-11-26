@@ -18,26 +18,32 @@ public class Node
 public class Program { 
     public static void Main()
     {
-        //Node head = new Node(2);
-        //head.Next = new Node(3, head);
-        //head.Next.Next = new Node(5, head.Next);
-        Node head = new Node(2);
+        int[] arr = {5, 2, 3, 0, 1};
+        Node head = new Node(arr[0]);
         Node iterator = head;
-        for (int i = 0; i < 50; i++)
+        for (int i = 1; i < arr.Length; i++)
         {
-            iterator = new Node(i, iterator);
+            iterator = new Node(arr[i], iterator);
             iterator.Prev.Next = iterator;
         }
 
-        
+
+        //Node head = new Node(2);
+        //Node iterator = head;
+        //for (int i = 0; i < 50; i++)
+        //{
+        //    iterator = new Node(i, iterator);
+        //    iterator.Prev.Next = iterator;
+        //}
+        Print(head, "Original list: ");
+
         //Node tail = node3;
-      
+
         //head.Next = node2;
         //node2.Prev = head;
         //node2.Next = node3;
         //node3.Prev = node2;
 
-        Print(head, "Original list: ");
         //// create a new node called node4, insert it between nodes 2 and 3
         //Node node4 = new Node(5);
         //node4.Prev = node2;
