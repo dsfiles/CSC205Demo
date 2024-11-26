@@ -18,14 +18,17 @@ public class Node
 public class Program { 
     public static void Main()
     {
-        //Node node1 = new Node(2);
+        //Node head = new Node(2);
+        //head.Next = new Node(3, head);
+        //head.Next.Next = new Node(5, head.Next);
         Node head = new Node(2);
+        Node iterator = head;
+        for (int i = 0; i < 50; i++)
+        {
+            iterator = new Node(i, iterator);
+            iterator.Prev.Next = iterator;
+        }
 
-        //Node node2 = new Node(3);
-        head.Next = new Node(3, head);
-
-        //Node node3 = new Node(4);
-        head.Next.Next = new Node(5, head.Next);
         
         //Node tail = node3;
       
