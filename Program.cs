@@ -2,68 +2,48 @@
 
 public class Node
 {
-        public Node Next;
-        public Node Prev;
-        public int Value;
+    public Node Next;
+    public Node Prev;
+    public int Value;
+    public Node(int value) 
+    { 
+        Value = value;
+        Next = null;
+        Prev = null;
+    }
+
 }
 
 public class Program { 
     public static void Main()
     {
-        Node node1 = new Node();
-        Node node2 = new Node();
-        Node node3 = new Node();
+        Node node1 = new Node(2);
+        Node node2 = new Node(3);
+        Node node3 = new Node(4);
         Node head = node1;
         Node tail = node3;
-        node1.Value = 2;
-        node2.Value = 3;
-        node3.Value = 4;
-
-        //node1.Prev = head;
-        //node3.Next = tail;
-
+      
         node1.Next = node2;
         node2.Prev = node1;
         node2.Next = node3;
         node3.Prev = node2;
 
-        //Console.WriteLine(head.Value);
-        //Console.WriteLine(head.Next.Value);
-        //Console.WriteLine(head.Next.Next.Value);
-
-
-
-
-        
-
-        Node iterator = head;
-        while (iterator != null)
-        {
-            Console.Write(iterator.Value + " ");
-            iterator = iterator.Next;
-        }
-        Console.WriteLine();
-
-        iterator = tail;
-        while (iterator != null)
-        {
-            Console.Write(iterator.Value + " ");
-            iterator = iterator.Prev;
-        }
-        Console.WriteLine();
-
-        Console.WriteLine(head.Next.Next.Prev.Next.Value);
-        Console.WriteLine(tail.Prev.Prev.Next.Value);
-
+        Print(head, "Original list: ");
         // create a new node called node4, insert it between nodes 2 and 3
-        Node node4 = new Node();
-        node4.Value = 5;
+        Node node4 = new Node(5);
         node4.Prev = node2;
         node4.Next = node3;
         node2.Next = node4;
         node3.Prev = node4;
 
-        iterator = head;
+        Print(head, "After insertin a new node: ");
+    }
+
+
+
+    public static void Print(Node iterator, string msg)
+    {
+        Console.Write(msg);
         while (iterator != null)
         {
             Console.Write(iterator.Value + " ");
