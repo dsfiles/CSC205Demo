@@ -55,5 +55,20 @@ public class Program {
         Console.WriteLine(head.Next.Next.Prev.Next.Value);
         Console.WriteLine(tail.Prev.Prev.Next.Value);
 
+        // create a new node called node4, insert it between nodes 2 and 3
+        Node node4 = new Node();
+        node4.Value = 5;
+        node4.Prev = node2;
+        node4.Next = node3;
+        node2.Next = node4;
+        node3.Prev = node4;
+
+        iterator = head;
+        while (iterator != null)
+        {
+            Console.Write(iterator.Value + " ");
+            iterator = iterator.Next;
+        }
+        Console.WriteLine();
     }
 }
